@@ -17,7 +17,7 @@ const Contact = () => {
               Szabó Tibor
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              Villamosúzemmérnök,
+              Villamosüzemmérnök,
               <br />
               cégvezető
               <br />
