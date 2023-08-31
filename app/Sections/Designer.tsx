@@ -27,9 +27,7 @@ const Designer = () => {
     >
       <input type="file" onChange={handleFileChange} />
       <Stage width={200} height={200}>
-        <Layer>
-          <Image image={image} width={200} height={200} alt=""></Image>
-        </Layer>
+        <Layer></Layer>
       </Stage>
     </section>
   );
