@@ -12,6 +12,7 @@ import Prices from "./Sections/Prices";
 import Szalagos from "./Sections/Szalagos";
 import FAQ from "./Sections/FAQ";
 import ASZF from "./Sections/ASZF";
+import Designer from "./Sections/Designer";
 
 export default function Home() {
   return (
