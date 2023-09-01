@@ -68,7 +68,7 @@ const Contact = () => {
               Lépj kapcsolatba velünk, és legyél az ügyfelünk
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <Button size="sm" href="#order" gradientDuoTone="purpleToBlue">
+              <Button size="sm" href="#order" gradientDuoTone="pinkToOrange">
                 Rendelj most!
                 <svg
                   className="-mr-1 ml-2 h-5 w-5"
@@ -83,8 +83,11 @@ const Contact = () => {
                   ></path>
                 </svg>
               </Button>
-              <Button href="#products" size="sm" color="light">
-                Termékeink
+              <Button href="#szalagos" size="sm" color="light">
+                Szalagos kitűzők
+              </Button>
+              <Button href="#kituzok" size="sm" color="light">
+                Kitűzők és jelvények
               </Button>
             </div>
           </Card>

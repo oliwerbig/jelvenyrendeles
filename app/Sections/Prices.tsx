@@ -6,12 +6,15 @@ const Prices = () => {
   return (
     <section
       id="prices"
-      className="bg-slate-100 py-12 px-8 dark:bg-gray-800 lg:py-16 lg:px-20"
+      className="bg-slate-100 px-8 py-12 dark:bg-gray-800 lg:px-20 lg:py-16"
     >
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center">
         <h2 className="mb-4 w-fit text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
           Árlista
         </h2>
+        <h4 className="text-md mb-4 w-fit text-center font-extrabold tracking-tight text-gray-900 dark:text-white">
+          Az árak 1 termékre vonatkoznak, a minimális rendelési mennyiség 50db
+        </h4>
         <div className="flex w-full flex-row flex-wrap items-stretch justify-center gap-6">
           <div className="basis-[35rem]">
             <Table hoverable striped>
@@ -100,9 +103,15 @@ const Prices = () => {
             </Table>
           </div>
         </div>
-        <div className="flex flex-col space-y-4 py-8 sm:flex-row sm:space-y-0 sm:space-x-4">
+        <div className="flex flex-col space-y-4 py-8 sm:flex-row sm:space-x-4 sm:space-y-0">
           <Button size="lg" gradientDuoTone="pinkToOrange" href="#order">
             Rendelés
+          </Button>
+          <Button size="lg" href="#szalagos" color="light">
+            Szalagos kitűzők
+          </Button>
+          <Button size="lg" href="#kituzok" color="light">
+            Kitűzők és jelvények
           </Button>
           <Button size="lg" href="#contact" color="light">
             Kérdésed van?

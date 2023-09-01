@@ -30,7 +30,7 @@ const ContactForm = (props: React.PropsWithChildren<any>) => {
         <Label htmlFor="message" value="Üzeneted" />
         <Textarea id="message" rows={6} placeholder="..."></Textarea>
       </div>
-      <Button type="submit" size="md" gradientDuoTone="purpleToBlue">
+      <Button type="submit" size="md" gradientDuoTone="pinkToOrange">
         Üzenet küldése
       </Button>
     </form>

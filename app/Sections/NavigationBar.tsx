@@ -23,7 +23,8 @@ const NavigationBar = () => {
           <Navbar.Toggle></Navbar.Toggle>
         </div>
         <Navbar.Collapse>
-          <Navbar.Link href="#products">Termékeink</Navbar.Link>
+          <Navbar.Link href="#szalagos">Szalagos kitűzők</Navbar.Link>
+          <Navbar.Link href="#kituzok">Kitűzők és jelvények</Navbar.Link>
           <Navbar.Link href="#prices">Árlista</Navbar.Link>
           <Navbar.Link href="#about">Rólunk</Navbar.Link>
         </Navbar.Collapse>

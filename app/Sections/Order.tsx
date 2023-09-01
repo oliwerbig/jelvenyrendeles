@@ -49,7 +49,7 @@ const Order = () => {
               <br />
               <br />
               <span className="cursor-pointer select-all text-base font-semibold leading-7 text-white">
-                jelvenydepo@gmail.com
+                jelvenyrendeles@gmail.com
               </span>
               <br />
               <span className="cursor-pointer select-all text-base font-semibold leading-7 text-white">
@@ -60,12 +60,6 @@ const Order = () => {
               <Button href="#prices" outline color="gray">
                 Árlista <span aria-hidden="true">→</span>
               </Button>
-              <a
-                href="#products"
-                className="text-base font-semibold leading-7 text-white hover:text-slate-200"
-              >
-                Termékeink
-              </a>
               <a
                 href="#contact"
                 className="text-base font-semibold leading-7 text-white hover:text-slate-200"

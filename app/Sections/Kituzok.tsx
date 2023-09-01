@@ -8,10 +8,10 @@ const Kituzok = () => {
 
   return (
     <section
-      id="products"
+      id="kituzok"
       className="bg-slate-100 bg-opacity-80 dark:bg-gray-900/75"
     >
-      <div className="mx-auto max-w-7xl items-center gap-16 py-12 px-8 lg:py-16 lg:px-20 xl:grid xl:grid-cols-2">
+      <div className="mx-auto max-w-7xl items-center gap-16 px-8 py-12 lg:px-20 lg:py-16 xl:grid xl:grid-cols-2">
         <Carousel className="mt-10 xl:mt-0">
           {badgeImages.map((imageId) => (
             <figure
@@ -77,7 +77,7 @@ const Kituzok = () => {
               35x35mm
             </Badge>
           </div>
-          <div className="flex flex-row gap-2 pt-10 pb-2">
+          <div className="flex flex-row gap-2 pb-2 pt-10">
             <Button color="light" href="#prices">
               Árlista
             </Button>

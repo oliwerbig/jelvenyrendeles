@@ -2,22 +2,33 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-white px-8 pt-8 pb-2 dark:bg-gray-900 lg:px-20 lg:pt-16 lg:pb-4"
+      className="bg-white px-8 pb-2 pt-8 dark:bg-gray-900 lg:px-20 lg:pb-4 lg:pt-16"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-8 max-w-screen-sm text-center lg:mb-16">
           <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
             Kik vagyunk mi?
           </h2>
-          <p className="font-light text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16">
+          <p className="text-left font-light text-gray-600 dark:text-gray-400 sm:text-xl lg:mb-16">
             Üdvözöljük a Jelvényrendelésnél!
             <br></br>
             <br></br>
-            Cégünk a kitűzők, jelvények és egyedi ajándéktárgyak tervezésére és
-            gyártására specializálódott. Több éves tapasztalattal és
-            elkötelezettséggel állunk ügyfeleink rendelkezésére, hogy segítsünk
-            kifejezni az egyediségüket és az események fontosságát minőségi és
-            emlékezetes termékeink által.
+            Cégünk a kitűzők, jelvények tervezésére és gyártására
+            specializálódott. Több éves tapasztalattal és elkötelezettséggel
+            állunk ügyfeleink rendelkezésére, hogy segítsünk kifejezni az
+            egyediségüket és az események fontosságát minőségi és emlékezetes
+            termékeink által.
+            <br></br>
+            <br></br>
+            Iskolakezdés idején izgalommal és várakozással tölt el minket minden
+            évben, ahogy a diákok új kihívások elé néznek. A végzősök
+            szalagavatója pedig a diákok és családok számára egyaránt
+            felejthetetlen élmény. Az esemény méltó megörökítéséhez minőségi
+            szalagavatós kitűzőket és egyedi jelvényeket is készítünk. Tisztában
+            vagyunk a szalagavató és iskolai emlékek jelentőségével. Büszkék
+            vagyunk arra, hogy gyermekeink iskolai életének fontos része
+            lehetünk, és az Ön iskoláját is szeretettel várjuk ebben az
+            emlékezetes időszakban.
             <br></br>
             <br></br>
             Vállalkozásunk alapvető értéke a kreativitás és a minőség iránti

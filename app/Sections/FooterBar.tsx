@@ -9,10 +9,14 @@ const FooterBar = () => {
       <Footer container={true}>
         <div className="mx-auto w-[70vw]">
           <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-            <div className="px-5">
-              <Footer.Brand href="/" src="/logo-05.svg" alt="Logo" />
-            </div>
-            <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+            <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-4 sm:gap-6">
+              <div>
+                <Footer.Brand
+                  href="https://jelvenydepo.hu"
+                  src="/logo-05.svg"
+                  alt="Logo"
+                />
+              </div>
               <div>
                 <Footer.Title title="Cégünk" />
                 <p>
@@ -38,7 +42,7 @@ const FooterBar = () => {
               <div>
                 <Footer.Title title="Átvevőhely" />
                 <p>
-                  XVII. kerületben! <br />
+                  XVII. kerületben <br />
                   (Budapest)
                 </p>
               </div>
