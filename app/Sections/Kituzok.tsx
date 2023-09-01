@@ -4,7 +4,9 @@ import { range } from "@/app/range";
 import { Badge, Button, Carousel } from "flowbite-react";
 import Image from "next/image";
 const Kituzok = () => {
-  const badgeImages = range(12, 1);
+  const badgeImages = [...range(43, 1)].sort(() =>
+    Math.random() > 0.5 ? 1 : -1
+  );
 
   return (
     <section
@@ -12,16 +14,16 @@ const Kituzok = () => {
       className="bg-slate-100 bg-opacity-80 dark:bg-gray-900/75"
     >
       <div className="mx-auto max-w-7xl items-center gap-16 px-8 py-12 lg:px-20 lg:py-16 xl:grid xl:grid-cols-2">
-        <Carousel className="mt-10 xl:mt-0">
+        <Carousel className="mt-10 h-[30rem]  xl:mt-0">
           {badgeImages.map((imageId) => (
             <figure
               key={imageId}
-              className="cursor-pointer grayscale-[25%] filter transition-all duration-300 hover:grayscale-0"
+              className=" cursor-pointer grayscale-[25%] filter transition-all duration-300 hover:grayscale-0"
             >
-              <div className="relative h-96 w-full">
+              <div className="relative h-[30rem] w-full">
                 <Image
                   className="rounded-lg"
-                  src={`/media/jelvenyrendeles/products/badge (${imageId}).jpg`}
+                  src={`/media/jelvenyrendeles/products/kituzo_promo (${imageId}).jpg`}
                   alt=""
                   fill
                   sizes="100%"
