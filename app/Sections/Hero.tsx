@@ -33,13 +33,13 @@ export default function Hero() {
         </svg>
       </div>
       <section
-        className="py-12 px-8 shadow-xl shadow-gray-200 dark:bg-gray-900 dark:shadow-gray-900 lg:py-16 lg:px-20"
+        className="px-8 py-12 shadow-xl shadow-gray-200 dark:bg-gray-900 dark:shadow-gray-900 lg:px-20 lg:py-16"
         id="hero"
       >
         <div className="mx-auto grid max-w-7xl grid-cols-12">
           <div className="col-span-12 lg:col-span-7">
             <div className="hidden lg:mb-8 lg:flex lg:justify-start">
-              <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-slate-100/10 dark:hover:ring-slate-100/20">
+              <div className="relative overflow-hidden rounded-full px-4 py-1.5 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-slate-100/10 dark:hover:ring-slate-100/20">
                 <span className="flex items-center justify-center gap-2 text-gray-600">
                   <div className="h-[1rem] w-[1.5rem] rounded bg-[linear-gradient(180deg,_#C8102E_33.333%,_#FFF_33.333%_66.666%,_#00843E_66.666%)]"></div>
                   Magyar gyártású, magyar méretekben, magyar alapanyagokból{" "}
@@ -51,20 +51,26 @@ export default function Hero() {
               </div>
             </div>
             <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
-              Jelvényeket, kitűzőket és ajándéktárgyakat készítünk
+              Jelvényeket, kitűzőket készítünk
             </h1>
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Saját gyártású kitűzőket, jelvényeket és ajándéktárgyakat árulunk,
-              magyar alapanyagokból, különleges eseményekre
+              Saját gyártású kitűzőket, jelvényeket árulunk, magyar
+              alapanyagokból, különleges eseményekre <br />
+              <br />✆ +36 30 615 6969
+              <br />✉ jelvenyrendeles@gmail.com
             </p>
+            <br />
             <div className="flex flex-wrap items-center gap-2">
-              <Button href="#products" color="light" size="xl">
-                Termékeink
+              <Button href="#szalagos" color="light" size="xl">
+                Szalagos kitűzők
+              </Button>
+              <Button href="#kituzo" color="light" size="xl">
+                Kitűzők és jelvények
               </Button>
               <Button href="#order" gradientDuoTone="pinkToOrange" size="xl">
                 Rendelés
                 <svg
-                  className="ml-2 -mr-1 h-5 w-5"
+                  className="-mr-1 ml-2 h-5 w-5"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
