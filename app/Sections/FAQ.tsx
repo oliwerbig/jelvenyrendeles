@@ -48,7 +48,7 @@ const FAQ = () => {
               </h3>
               <p className="text-gray-500 dark:text-gray-400">
                 A kiszállítási idő a terméktől és a kiszállítási címtől függ.
-                Amint azok elkészülnek, a rendeléseket rögötn postázzuk.
+                Amint azok elkészülnek, a rendeléseket rögtön postázzuk.
                 Ugyanakkor a rendelések legyártása a terméktől függően eltarthat
                 napokig, vagy hetekig. A rendelés leadása után felvesszük veled
                 a kapcsolatot és megegyezünk egy időpontban.
