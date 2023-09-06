@@ -56,7 +56,7 @@ export default function Hero() {
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
               Saját gyártású kitűzőket, jelvényeket árulunk, magyar
               alapanyagokból, különleges eseményekre <br />
-              <br />✆ +36 30 615 6969
+              <br />✆ +36 30 382 9773
               <br />✉ jelvenyrendeles@gmail.com
             </p>
             <br />
