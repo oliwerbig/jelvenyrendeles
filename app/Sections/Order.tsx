@@ -45,7 +45,8 @@ const Order = () => {
               minket emailcímünkön, vagy telefonszámunkon. <br></br>
               <br></br>A rendelésed leadása után mindenképp keresni fogunk téged
               a megadott elérhetőségeken a részletek megbeszélése és a rendelés
-              megerősítése céljával.
+              megerősítése céljával. Ha 2-3 napon belül nem jelentkezünk,
+              keressen további elérhetőségeinken.
               <br />
               <br />
               <span className="cursor-pointer select-all text-base font-semibold leading-7 text-white">
