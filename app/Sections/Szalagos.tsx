@@ -35,7 +35,8 @@ const Szalagos = () => {
             az áfá-t. <br></br>
             <br></br>Ha átutalással kéri a fizetést, kérjük, hogy megrendeléskor
             ezt előre jelezze és adja meg a számlázási címet, minden más esetben
-            az iskola nevére állítom ki a számlát. Előleget nem kérek.<br></br>
+            az iskola nevére állítjuk ki a számlát. Előleget nem kérünk.
+            <br></br>
           </p>
           <div className="flex flex-row gap-2 pb-2 pt-10">
             <Button color="light" href="#prices">
