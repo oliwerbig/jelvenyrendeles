@@ -30,11 +30,14 @@ const FooterBar = () => {
               <div>
                 <Footer.Title title="Elérhetőség" />
                 <p>
-                  Szabó Tibor - Cégvezető jelvenydepo@gmail.com <br />
+                  Szabó Tibor - Cégvezető
+                  <br /> jelvenydepo@gmail.com <br />
                   +36203710680
                   <br />
                   <br />
-                  Nagy Ildikó - Ügyintéző <br />
+                  Nagy Ildikó - Kapcsolattartó <br />
+                  jelvenyrendeles@gmail.com
+                  <br />
                   +36 30 382 9773
                   <br />
                 </p>
