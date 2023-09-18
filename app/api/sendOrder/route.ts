@@ -7,7 +7,7 @@ export async function POST(request: Request) {
   const { email, phone, message, name } = (await request.json()) as any;
 
   const msg = {
-    to: "oliver.emanuel.nagy@gmail.com",
+    to: "jelvenyrendeles@gmail.com",
     from: "info@jelvenydepo.hu",
     replyTo: email,
     templateId: "d-9980c208663844af8eb5044bf2d97e9e",
