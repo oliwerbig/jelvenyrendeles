@@ -31,7 +31,7 @@ const Szalagos = () => {
             <br></br>A jelvénybe bepréseljük a szalagot. A szalagokból széles
             színválasztékot kínálunk. <br></br>
             <br></br>Szalag vége le van hegesztve, így nem rojtolódik.<br></br>
-            <br></br> A szalagavató jelvény ára 450 Ft/db. Az ár nem tartalmazza
+            <br></br> A szalagavató jelvény ára 490 Ft/db. Az ár nem tartalmazza
             az áfá-t. <br></br>
             <br></br>Ha átutalással kéri a fizetést, kérjük, hogy megrendeléskor
             ezt előre jelezze és adja meg a számlázási címet, minden más esetben

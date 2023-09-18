@@ -57,7 +57,7 @@ const Prices = () => {
                     40mm kör szalagos
                   </Table.Cell>
                   <Table.Cell>1 db kész szalagos kitűző</Table.Cell>
-                  <Table.Cell>450ft</Table.Cell>
+                  <Table.Cell>490ft</Table.Cell>
                 </Table.Row>
               </Table.Body>
             </Table>
