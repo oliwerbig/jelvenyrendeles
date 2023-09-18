@@ -8,7 +8,7 @@ const sendOrder = async (data: {
   message: string;
   name: string;
 }) => {
-  await fetch("/api/jelvenyrendeles/sendOrder", {
+  await fetch("/api/sendOrder", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(data),
