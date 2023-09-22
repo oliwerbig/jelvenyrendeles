@@ -26,8 +26,7 @@ const Szalagos = () => {
             az iskola neve, a névadó arcképe, vagy az iskola logója. A szalag
             anyaga selyem szatén. A szalag szélessége 15 mm. A jelvényből kilógó
             szalag hossza 7.5 cm. <br></br>
-            <br></br>A Papp László által gyártott szalagavatós kitűzőkhöz
-            hasonló szisztémával készítjük<br></br>
+            <br></br
             <br></br>A jelvénybe bepréseljük a szalagot. A szalagokból széles
             színválasztékot kínálunk. <br></br>
             <br></br>Szalag vége le van hegesztve, így nem rojtolódik.<br></br>
