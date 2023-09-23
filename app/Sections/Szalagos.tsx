@@ -4,9 +4,6 @@ import { range } from "@/app/range";
 import { Badge, Button, Carousel } from "flowbite-react";
 import Image from "next/image";
 const Szalagos = () => {
-  const badgeImages = range(12, 1);
-  const szalagosImages = range(12, 1);
-  const szalagokImages = ["1", "2", "4", "5", "6", "8", "11", "14", "15"];
 
   return (
     <section
@@ -26,7 +23,8 @@ const Szalagos = () => {
             az iskola neve, a névadó arcképe, vagy az iskola logója. A szalag
             anyaga selyem szatén. A szalag szélessége 15 mm. A jelvényből kilógó
             szalag hossza 7.5 cm. <br></br>
-            <br></br
+            <br></br>A Papp László által gyártott szalagavatós kitűzőkhöz hasonló szisztémával készítjük
+            <br></br>
             <br></br>A jelvénybe bepréseljük a szalagot. A szalagokból széles
             színválasztékot kínálunk. <br></br>
             <br></br>Szalag vége le van hegesztve, így nem rojtolódik.<br></br>
