@@ -22,18 +22,19 @@ const Szalagos = () => {
             A szalagavató jelvény 4 cm átmérőjű, fém alapú. A jelvényen szerepel
             az iskola neve, a névadó arcképe, vagy az iskola logója. A szalag
             anyaga selyem szatén. A szalag szélessége 15 mm. A jelvényből kilógó
-            szalag hossza 7.5 cm. <br></br>
+            szalag hossza kb. 7 cm. <br></br>
             <br></br>A Papp László által gyártott szalagavatós kitűzőkhöz hasonló szisztémával készítjük
             <br></br>
             <br></br>A jelvénybe bepréseljük a szalagot. A szalagokból széles
             színválasztékot kínálunk. <br></br>
             <br></br>Szalag vége le van hegesztve, így nem rojtolódik.<br></br>
-            <br></br> A szalagavató jelvény ára 490 Ft/db. Az ár nem tartalmazza
+            <br></br> A szalagavató jelvény ára egyenesvágással 490 Ft/db, 540 Ft/db cik-cak vágással. Az ár nem tartalmazza
             az áfá-t. <br></br>
             <br></br>Ha átutalással kéri a fizetést, kérjük, hogy megrendeléskor
             ezt előre jelezze és adja meg a számlázási címet, minden más esetben
             az iskola nevére állítjuk ki a számlát. Előleget nem kérünk.
             <br></br>
+            <br></br>Ha nincs kész grafika, 2000 Ft szerkesztési díjat számítunk fel.
           </p>
           <div className="flex flex-row gap-2 pb-2 pt-10">
             <Button color="light" href="#prices">
