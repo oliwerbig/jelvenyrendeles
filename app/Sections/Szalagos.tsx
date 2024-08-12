@@ -52,7 +52,7 @@ const Szalagos = () => {
               ezt előre jelezze és adja meg a számlázási címet, minden más esetben
               az iskola nevére állítjuk ki a számlát. Előleget nem kérünk.
               <br></br>
-              <br></br>Ha nincs kész grafika, 2000 Ft szerkesztési díjat számítunk fel.
+              <br></br>Ha nincs kész grafika, 3000 Ft szerkesztési díjat számítunk fel.
             </p>
             <div className="flex flex-row gap-2 pb-2 pt-10">
               <Button color="light" href="#prices">
