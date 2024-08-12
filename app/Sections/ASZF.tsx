@@ -7,7 +7,7 @@ const FAQ = () => {
         Általános Szerződési Feltételek
       </h2>
       <div className="mx-auto max-w-7xl px-6 py-8">
-        <div className="mb-20 rounded-3xl bg-slate-200 px-6 pt-16 shadow-2xl sm:px-16 md:pt-24 lg:px-24 lg:py-16">
+        <div className="mb-20 rounded-3xl bg-slate-200 dark:bg-gray-900 px-6 pt-16 shadow-2xl sm:px-16 md:pt-24 lg:px-24 lg:py-16">
           <ul>
             <li>
               1. Bevezetés <br /> Ezen Általános Szerződési Feltételek

@@ -69,7 +69,7 @@ const Szalagos = () => {
                 <tr>
                   <td>
                     <figure className="cursor-pointer grayscale-[5%] filter transition-all duration-300 hover:grayscale-0">
-                      <div className="relative h-[50rem] w-full">
+                      <div className="relative h-[45rem] w-full">
                         <Image
                           className="rounded-lg"
                           src={`/media/jelvenyrendeles/products/szalagos_promo (6).jpg`}
