@@ -54,7 +54,7 @@ export default function Hero() {
               Jelvényeket, kitűzőket készítünk
             </h1>
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Saját gyártású kitűzőket, jelvényeket árulunk, magyar
+              Saját gyártású kitűzőket, jelvényeket készítünk, magyar
               alapanyagokból, különleges eseményekre <br />
               <br />✆ +36 30 382 9773
               <br />✉ jelvenyrendeles@gmail.com
@@ -64,7 +64,7 @@ export default function Hero() {
               <Button href="#szalagos" color="light" size="xl">
                 Szalagos kitűzők
               </Button>
-              <Button href="#kituzo" color="light" size="xl">
+              <Button href="#kituzok" color="light" size="xl">
                 Kitűzők és jelvények
               </Button>
               <Button href="#order" gradientDuoTone="pinkToOrange" size="xl">

@@ -3,6 +3,7 @@
 import { range } from "@/app/range";
 import { Badge, Button, Carousel } from "flowbite-react";
 import Image from "next/image";
+import ImagesGallery from "../ImagesGallery";
 const Szalagos = () => {
 
   return (
@@ -28,7 +29,7 @@ const Szalagos = () => {
             <br></br>A jelvénybe bepréseljük a szalagot. A szalagokból széles
             színválasztékot kínálunk. <br></br>
             <br></br>Szalag vége le van hegesztve, így nem rojtolódik.<br></br>
-            <br></br> A szalagavató jelvény ára egyenesvágással 490 Ft/db, 540 Ft/db cik-cak vágással. Az ár nem tartalmazza
+            <br></br> A szalagavató jelvény ára egyenesvágással 590 Ft/db, 640 Ft/db cik-cak vágással. Az ár nem tartalmazza
             az áfá-t. <br></br>
             <br></br>Ha átutalással kéri a fizetést, kérjük, hogy megrendeléskor
             ezt előre jelezze és adja meg a számlázási címet, minden más esetben
@@ -51,10 +52,10 @@ const Szalagos = () => {
               <tr>
                 <td>
                   <figure className="cursor-pointer grayscale-[5%] filter transition-all duration-300 hover:grayscale-0">
-                    <div className="relative h-[40rem] w-full">
+                    <div className="relative h-[50rem] w-full">
                       <Image
                         className="rounded-lg"
-                        src={`/media/jelvenyrendeles/products/szalagos_promo (4).jpg`}
+                        src={`/media/jelvenyrendeles/products/szalagos_promo (6).jpg`}
                         alt=""
                         fill
                         sizes="100%"
@@ -62,6 +63,7 @@ const Szalagos = () => {
                           objectFit: "cover",
                         }}
                       />
+                      <ImagesGallery></ImagesGallery>
                     </div>
                     <figcaption className="text-md absolute bottom-6 left-[-42%] w-full pr-2 pt-2 text-center text-2xl text-black">
                       <p></p>
@@ -71,6 +73,7 @@ const Szalagos = () => {
               </tr>
             </tbody>
           </table>
+          
         </div>
       </div>
     </section>
