@@ -46,11 +46,9 @@ const Szalagos = () => {
               <br></br>A jelvénybe bepréseljük a szalagot. A szalagokból széles
               színválasztékot kínálunk. <br></br>
               <br></br>Szalag vége le van hegesztve, így nem rojtolódik.<br></br>
-              <br></br> A szalagavató jelvény ára egyenesvágással 590 Ft/db, 640 Ft/db cik-cak vágással. Az ár nem tartalmazza
+              <br></br> A szalagavató jelvény ára egyenesvágással 540 Ft/db, 590 Ft/db cikk cakk vágással. Az ár nem tartalmazza
               az áfá-t. <br></br>
-              <br></br>Ha átutalással kéri a fizetést, kérjük, hogy megrendeléskor
-              ezt előre jelezze és adja meg a számlázási címet, minden más esetben
-              az iskola nevére állítjuk ki a számlát. Előleget nem kérünk.
+              <br></br>Ha átutalással kéri a fizetést, kérjük, hogy megrendeléskor ezt előre jelezze és adja meg a számlázási címet, minden más esetben az iskola nevére állítjuk ki a számlát. Előleget nem kérünk.
               <br></br>
               <br></br>Ha nincs kész grafika, 3000 Ft szerkesztési díjat számítunk fel.
             </p>

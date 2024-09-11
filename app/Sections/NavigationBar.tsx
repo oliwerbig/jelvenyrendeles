@@ -7,9 +7,6 @@ import Image from "next/image";
 const NavigationBar = () => {
   return (
     <>
-      <section className="p-6 text-center" style={{
-        backgroundColor: "cornsilk"
-      }}>AKCIÓ! Ha szeptember 1.-ig rendelsz, még a tavalyi áron kaphatod kézhez!</section>
       <Navbar className="relative z-10">
         <Navbar.Brand href="/">
           <div

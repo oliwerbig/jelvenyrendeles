@@ -29,42 +29,42 @@ const Prices = () => {
                     26mm kör
                   </Table.Cell>
                   <Table.Cell>1 db kész kitűző</Table.Cell>
-                  <Table.Cell>-</Table.Cell>
+                  <Table.Cell>230ft</Table.Cell>
                 </Table.Row>
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     32mm kör
                   </Table.Cell>
                   <Table.Cell>1 db kész kitűző</Table.Cell>
-                  <Table.Cell>235ft</Table.Cell>
+                  <Table.Cell>240ft</Table.Cell>
                 </Table.Row>
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     40mm kör
                   </Table.Cell>
                   <Table.Cell>1 db kész kitűző</Table.Cell>
-                  <Table.Cell>240ft</Table.Cell>
+                  <Table.Cell>250ft</Table.Cell>
                 </Table.Row>
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     55mm kör
                   </Table.Cell>
                   <Table.Cell>1 db kész kitűző</Table.Cell>
-                  <Table.Cell>255ft</Table.Cell>
+                  <Table.Cell>260ft</Table.Cell>
                 </Table.Row>
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     40mm kör szalagos egyenes
                   </Table.Cell>
                   <Table.Cell>1 db kész szalagos kitűző</Table.Cell>
-                  <Table.Cell>490ft</Table.Cell>
+                  <Table.Cell>540ft</Table.Cell>
                 </Table.Row>
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     40mm kör szalagos cikcak
                   </Table.Cell>
                   <Table.Cell>1 db kész szalagos kitűző</Table.Cell>
-                  <Table.Cell>540ft</Table.Cell>
+                  <Table.Cell>590ft</Table.Cell>
                 </Table.Row>
               </Table.Body>
             </Table>
@@ -89,14 +89,14 @@ const Prices = () => {
                     40x28mm téglalap
                   </Table.Cell>
                   <Table.Cell>1 db kész kitűző</Table.Cell>
-                  <Table.Cell>235ft</Table.Cell>
+                  <Table.Cell>240ft</Table.Cell>
                 </Table.Row>
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     55x38mm téglalap
                   </Table.Cell>
                   <Table.Cell>1 db kész kitűző</Table.Cell>
-                  <Table.Cell>240ft</Table.Cell>
+                  <Table.Cell>260ft</Table.Cell>
                 </Table.Row>
                 <Table.Row>
                   <Table.Cell colSpan={3}>
