@@ -13,7 +13,7 @@ const Prices = () => {
           Árlista
         </h2>
         <h4 className="text-md mb-4 w-fit text-center font-extrabold tracking-tight text-gray-900 dark:text-white">
-          Az árak 1 termékre vonatkoznak, a minimális rendelési mennyiség 50db
+          Az árak 1 termékre vonatkoznak
         </h4>
         <div className="flex w-full flex-row flex-wrap items-stretch justify-center gap-6">
           <div className="basis-[35rem]">
