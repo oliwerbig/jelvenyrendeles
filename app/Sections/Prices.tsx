@@ -57,7 +57,7 @@ const Prices = () => {
                     40mm kör szalagos egyenes
                   </Table.Cell>
                   <Table.Cell>1 db kész szalagos kitűző</Table.Cell>
-                  <Table.Cell>540ft</Table.Cell>
+                  <Table.Cell>550ft</Table.Cell>
                 </Table.Row>
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
@@ -89,14 +89,14 @@ const Prices = () => {
                     40x28mm téglalap
                   </Table.Cell>
                   <Table.Cell>1 db kész kitűző</Table.Cell>
-                  <Table.Cell>240ft</Table.Cell>
+                  <Table.Cell>260ft</Table.Cell>
                 </Table.Row>
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     55x38mm téglalap
                   </Table.Cell>
                   <Table.Cell>1 db kész kitűző</Table.Cell>
-                  <Table.Cell>260ft</Table.Cell>
+                  <Table.Cell>280ft</Table.Cell>
                 </Table.Row>
                 <Table.Row>
                   <Table.Cell colSpan={3}>
