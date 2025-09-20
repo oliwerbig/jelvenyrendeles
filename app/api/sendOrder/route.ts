@@ -1,56 +1,46 @@
-import { put } from '@vercel/blob';
 import sgMail, { MailDataRequired } from "@sendgrid/mail";
 import { NextResponse } from "next/server";
 
 sgMail.setApiKey(process.env.EMAIL_API_KEY as string);
 
-// Helper to convert a File to a Buffer
-async function fileToBuffer(file: File): Promise<Buffer> {
-    const arrayBuffer = await file.arrayBuffer();
-    return Buffer.from(arrayBuffer);
-}
-
 export async function POST(request: Request) {
   try {
-    const formData = await request.formData();
+    const data = await request.json();
 
-    const orderType = formData.get("orderType") as string;
-    const institutionName = formData.get("institutionName") as string;
-    const contactName = formData.get("contactName") as string;
-    const contactTitle = formData.get("contactTitle") as string;
-    const contactPhone = formData.get("contactPhone") as string;
-    const contactEmail = formData.get("contactEmail") as string;
-    const productType = formData.get("productType") as string;
-    const quantity = formData.get("quantity") as string;
-    const designBadgeSize = formData.get("designBadgeSize") as string;
-    const designRibbonColor = formData.get("designRibbonColor") as string;
-    const designFontColor = formData.get("designFontColor") as string;
-    const designRibbonEnd = formData.get("designRibbonEnd") as string;
-    const description = formData.get("description") as string;
-    const deliveryAndPayment = formData.get("deliveryAndPayment") as string;
-    const billingInfoName = formData.get("billingInfoName") as string;
-    const billingInfoAddress = formData.get("billingInfoAddress") as string;
-    const billingInfoEmail = formData.get("billingInfoEmail") as string;
-    const shippingInfoAddress = formData.get("shippingInfoAddress") as string;
-    const shippingInfoZip = formData.get("shippingInfoZip") as string;
-    const shippingInfoContactPhone = formData.get("shippingInfoContactPhone") as string;
-    const otherRequest = formData.get("otherRequest") as string;
-    const promDate = formData.get("promDate") as string;
-    const orderDate = formData.get("orderDate") as string;
+    const {
+      orderType,
+      institutionName,
+      contactName,
+      contactTitle,
+      contactPhone,
+      contactEmail,
+      productType,
+      quantity,
+      designBadgeSize,
+      designRibbonColor,
+      designFontColor,
+      designRibbonEnd,
+      description,
+      deliveryAndPayment,
+      billingInfoName,
+      billingInfoAddress,
+      billingInfoEmail,
+      shippingInfoAddress,
+      shippingInfoZip,
+      shippingInfoContactPhone,
+      otherRequest,
+      promDate,
+      orderDate,
+      grafika, // This is now a URL string
+      tavalyiFoto, // This is now a URL string
+    } = data;
 
-    const grafika = formData.get("grafika") as File | null;
-    const tavalyiFoto = formData.get("tavalyiFoto") as File | null;
-
-    const attachments = [];
     const attachmentUrls = [];
-
-    if (grafika && grafika.size > 0) {
-        const blob = await put(grafika.name, grafika, { access: 'public' });
-        attachmentUrls.push(blob.url);
+    if (grafika) {
+        attachmentUrls.push(grafika);
     }
-    if (tavalyiFoto && tavalyiFoto.size > 0) {
-        const blob = await put(tavalyiFoto.name, tavalyiFoto, { access: 'public' });
-        attachmentUrls.push(blob.url);
+    if (tavalyiFoto) {
+        attachmentUrls.push(tavalyiFoto);
     }
 
     const messageBody = `
@@ -84,10 +74,12 @@ export async function POST(request: Request) {
       <p><strong>Kérés, megjegyzés:</strong> ${otherRequest}</p>
       <p><strong>Szalagavató időpontja:</strong> ${promDate}</p>
       <p><strong>Megrendelés dátuma:</strong> ${orderDate}</p>
+      ${attachmentUrls.length > 0 ? `
       <p><strong>Csatolt fájlok:</strong></p>
       <ul>
         ${attachmentUrls.map(url => `<li><a href="${url}">${url}</a></li>`).join('')}
       </ul>
+      ` : ''}
     `;
 
     const msg: MailDataRequired = {

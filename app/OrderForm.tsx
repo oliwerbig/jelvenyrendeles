@@ -1,39 +1,11 @@
 "use client";
 import { Button, Label, Textarea, TextInput, Radio, FileInput } from "flowbite-react";
-import React from "react";
-
-const sendOrder = async (data: any) => {
-  const formData = new FormData();
-  Object.keys(data).forEach(key => {
-    if (key === 'grafika' || key === 'tavalyiFoto') {
-      if (data[key]) {
-        formData.append(key, data[key]);
-      }
-    } else {
-      formData.append(key, data[key]);
-    }
-  });
-
-  await fetch("/api/sendOrder", {
-    method: "POST",
-    body: formData,
-  })
-    .then(async (res) => {
-        if (res.ok) {
-            alert("Sikeresen elküldted a rendelésed!");
-        } else {
-            const error = await res.json();
-            alert(`Hiba történt: ${error.message}`);
-        }
-    })
-    .catch((error) => {
-      alert(
-        "Valami hiba történt, kérlek add le rendelésed telefonon vagy saját email kliensből"
-      );
-    });
-};
+import React, { useRef } from "react";
+import { upload } from '@vercel/blob/client';
 
 const OrderForm = (props: React.PropsWithChildren<any>) => {
+  const inputFileRef = useRef<HTMLInputElement>(null);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [formState, setFormState] = React.useState({
     orderType: "Árajánlat kérés",
     institutionName: "",
@@ -62,9 +34,58 @@ const OrderForm = (props: React.PropsWithChildren<any>) => {
     tavalyiFoto: null as File | null,
   });
 
-  const handleOrder = (e: React.FormEvent) => {
+  const handleOrder = async (e: React.FormEvent) => {
     e.preventDefault();
-    sendOrder(formState);
+    setIsSubmitting(true);
+
+    try {
+      let grafikaUrl = '';
+      if (formState.grafika) {
+        const newBlob = await upload(formState.grafika.name, formState.grafika, {
+          access: 'public',
+          handleUploadUrl: '/api/upload',
+        });
+        grafikaUrl = newBlob.url;
+      }
+
+      let tavalyiFotoUrl = '';
+      if (formState.tavalyiFoto) {
+        const newBlob = await upload(formState.tavalyiFoto.name, formState.tavalyiFoto, {
+          access: 'public',
+          handleUploadUrl: '/api/upload',
+        });
+        tavalyiFotoUrl = newBlob.url;
+      }
+
+      const dataToSend = {
+        ...formState,
+        grafika: grafikaUrl,
+        tavalyiFoto: tavalyiFotoUrl,
+      };
+
+      const res = await fetch("/api/sendOrder", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataToSend),
+      });
+
+      if (res.ok) {
+        alert("Sikeresen elküldted a rendelésed!");
+        // Optionally reset form state here
+      } else {
+        const error = await res.json();
+        alert(`Hiba történt: ${error.message}`);
+      }
+    } catch (error) {
+      console.error(error);
+      alert(
+        "Valami hiba történt, kérlek add le rendelésed telefonon vagy saját email kliensből"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -264,8 +285,9 @@ const OrderForm = (props: React.PropsWithChildren<any>) => {
         type="submit"
         size="md"
         gradientDuoTone="purpleToBlue"
+        disabled={isSubmitting}
       >
-        Küldés
+        {isSubmitting ? 'Küldés...' : 'Küldés'}
       </Button>
     </form>
   );
