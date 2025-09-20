@@ -1,3 +1,4 @@
+import { put } from '@vercel/blob';
 import sgMail, { MailDataRequired } from "@sendgrid/mail";
 import { NextResponse } from "next/server";
 
@@ -41,23 +42,15 @@ export async function POST(request: Request) {
     const tavalyiFoto = formData.get("tavalyiFoto") as File | null;
 
     const attachments = [];
+    const attachmentUrls = [];
+
     if (grafika && grafika.size > 0) {
-        const grafikaContent = await fileToBuffer(grafika);
-        attachments.push({
-            content: grafikaContent.toString("base64"),
-            filename: grafika.name || "grafika.pdf",
-            type: grafika.type || "application/pdf",
-            disposition: "attachment",
-        });
+        const blob = await put(grafika.name, grafika, { access: 'public' });
+        attachmentUrls.push(blob.url);
     }
     if (tavalyiFoto && tavalyiFoto.size > 0) {
-        const tavalyiFotoContent = await fileToBuffer(tavalyiFoto);
-        attachments.push({
-            content: tavalyiFotoContent.toString("base64"),
-            filename: tavalyiFoto.name || "tavalyi_foto.jpg",
-            type: tavalyiFoto.type || "image/jpeg",
-            disposition: "attachment",
-        });
+        const blob = await put(tavalyiFoto.name, tavalyiFoto, { access: 'public' });
+        attachmentUrls.push(blob.url);
     }
 
     const messageBody = `
@@ -91,6 +84,10 @@ export async function POST(request: Request) {
       <p><strong>Kérés, megjegyzés:</strong> ${otherRequest}</p>
       <p><strong>Szalagavató időpontja:</strong> ${promDate}</p>
       <p><strong>Megrendelés dátuma:</strong> ${orderDate}</p>
+      <p><strong>Csatolt fájlok:</strong></p>
+      <ul>
+        ${attachmentUrls.map(url => `<li><a href="${url}">${url}</a></li>`).join('')}
+      </ul>
     `;
 
     const msg: MailDataRequired = {
@@ -99,7 +96,6 @@ export async function POST(request: Request) {
       replyTo: contactEmail,
       subject: `Új ${orderType}`,
       html: messageBody,
-      attachments,
     };
 
     await sgMail.send(msg);
