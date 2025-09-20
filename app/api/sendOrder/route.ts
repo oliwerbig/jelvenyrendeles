@@ -1,89 +1,61 @@
 import sgMail, { MailDataRequired } from "@sendgrid/mail";
 import { NextResponse } from "next/server";
-import formidable, { Fields, Files } from "formidable";
-import fs from "fs/promises";
 
 sgMail.setApiKey(process.env.EMAIL_API_KEY as string);
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
-async function parseForm(request: Request): Promise<{ fields: Fields; files: Files }> {
-    const form = formidable({});
-    const chunks: any[] = [];
-    const reader = request.body!.getReader();
-
-    while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        chunks.push(value);
-    }
-
-    const buffer = Buffer.concat(chunks);
-
-    return new Promise((resolve, reject) => {
-        form.parse(buffer, (err, fields, files) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve({ fields, files });
-            }
-        });
-    });
+// Helper to convert a File to a Buffer
+async function fileToBuffer(file: File): Promise<Buffer> {
+    const arrayBuffer = await file.arrayBuffer();
+    return Buffer.from(arrayBuffer);
 }
-
 
 export async function POST(request: Request) {
   try {
-    const { fields, files } = await parseForm(request);
+    const formData = await request.formData();
 
-    const {
-        orderType,
-        institutionName,
-        contactName,
-        contactTitle,
-        contactPhone,
-        contactEmail,
-        productType,
-        quantity,
-        designBadgeSize,
-        designRibbonColor,
-        designFontColor,
-        designRibbonEnd,
-        description,
-        deliveryAndPayment,
-        billingInfoName,
-        billingInfoAddress,
-        billingInfoEmail,
-        shippingInfoAddress,
-        shippingInfoZip,
-        shippingInfoContactPhone,
-        otherRequest,
-        promDate,
-        orderDate
-    } = fields;
+    const orderType = formData.get("orderType") as string;
+    const institutionName = formData.get("institutionName") as string;
+    const contactName = formData.get("contactName") as string;
+    const contactTitle = formData.get("contactTitle") as string;
+    const contactPhone = formData.get("contactPhone") as string;
+    const contactEmail = formData.get("contactEmail") as string;
+    const productType = formData.get("productType") as string;
+    const quantity = formData.get("quantity") as string;
+    const designBadgeSize = formData.get("designBadgeSize") as string;
+    const designRibbonColor = formData.get("designRibbonColor") as string;
+    const designFontColor = formData.get("designFontColor") as string;
+    const designRibbonEnd = formData.get("designRibbonEnd") as string;
+    const description = formData.get("description") as string;
+    const deliveryAndPayment = formData.get("deliveryAndPayment") as string;
+    const billingInfoName = formData.get("billingInfoName") as string;
+    const billingInfoAddress = formData.get("billingInfoAddress") as string;
+    const billingInfoEmail = formData.get("billingInfoEmail") as string;
+    const shippingInfoAddress = formData.get("shippingInfoAddress") as string;
+    const shippingInfoZip = formData.get("shippingInfoZip") as string;
+    const shippingInfoContactPhone = formData.get("shippingInfoContactPhone") as string;
+    const otherRequest = formData.get("otherRequest") as string;
+    const promDate = formData.get("promDate") as string;
+    const orderDate = formData.get("orderDate") as string;
+
+    const grafika = formData.get("grafika") as File | null;
+    const tavalyiFoto = formData.get("tavalyiFoto") as File | null;
 
     const attachments = [];
-    if (files.grafika) {
-        const grafikaFile = Array.isArray(files.grafika) ? files.grafika[0] : files.grafika;
-        const grafikaContent = await fs.readFile(grafikaFile.filepath);
+    if (grafika && grafika.size > 0) {
+        const grafikaContent = await fileToBuffer(grafika);
         attachments.push({
             content: grafikaContent.toString("base64"),
-            filename: grafikaFile.originalFilename || "grafika.pdf",
-            type: "application/pdf",
+            filename: grafika.name || "grafika.pdf",
+            type: grafika.type || "application/pdf",
             disposition: "attachment",
         });
     }
-    if (files.tavalyiFoto) {
-        const tavalyiFotoFile = Array.isArray(files.tavalyiFoto) ? files.tavalyiFoto[0] : files.tavalyiFoto;
-        const tavalyiFotoContent = await fs.readFile(tavalyiFotoFile.filepath);
+    if (tavalyiFoto && tavalyiFoto.size > 0) {
+        const tavalyiFotoContent = await fileToBuffer(tavalyiFoto);
         attachments.push({
             content: tavalyiFotoContent.toString("base64"),
-            filename: tavalyiFotoFile.originalFilename || "tavalyi_foto.jpg",
-            type: tavalyiFotoFile.mimetype || "image/jpeg",
+            filename: tavalyiFoto.name || "tavalyi_foto.jpg",
+            type: tavalyiFoto.type || "image/jpeg",
             disposition: "attachment",
         });
     }
@@ -124,7 +96,7 @@ export async function POST(request: Request) {
     const msg: MailDataRequired = {
       to: "jelvenyrendeles@gmail.com",
       from: "info@jelvenydepo.hu",
-      replyTo: contactEmail as string,
+      replyTo: contactEmail,
       subject: `Új ${orderType}`,
       html: messageBody,
       attachments,
