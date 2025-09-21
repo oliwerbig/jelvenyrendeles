@@ -115,14 +115,14 @@ const OrderForm = (props: React.PropsWithChildren<any>) => {
   return (
     <form className={`space-y-8 ${props.className ?? ""}`} {...props} onSubmit={handleOrder}>
         <div>
-            <Label value="Árajánlat kérés / Megrendelőlap" />
+            <Label value="Megrendelőlap / Árajánlat kérés" />
             <div className="flex items-center gap-2">
-                <Radio id="arajanlat" name="orderType" value="Árajánlat kérés" defaultChecked onChange={handleInputChange} />
-                <Label htmlFor="arajanlat">Árajánlat kérés</Label>
+                <Radio id="megrendeles" name="orderType" value="Megrendelőlap" defaultChecked onChange={handleInputChange} />
+                <Label htmlFor="megrendeles">Megrendelőlap</Label>
             </div>
             <div className="flex items-center gap-2">
-                <Radio id="megrendeles" name="orderType" value="Megrendelőlap" onChange={handleInputChange} />
-                <Label htmlFor="megrendeles">Megrendelőlap</Label>
+                <Radio id="arajanlat" name="orderType" value="Árajánlat kérés" onChange={handleInputChange} />
+                <Label htmlFor="arajanlat">Árajánlat kérés</Label>
             </div>
         </div>
 
@@ -200,16 +200,8 @@ const OrderForm = (props: React.PropsWithChildren<any>) => {
                                 <Label htmlFor="size55">55mm</Label>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Radio id="size35sq" name="designBadgeSize" value="35x35mm négyzet" onChange={handleInputChange} />
-                                <Label htmlFor="size35sq">35x35mm négyzet</Label>
-                            </div>
-                            <div className="flex items-center gap-2">
                                 <Radio id="size40x28" name="designBadgeSize" value="40x28mm téglalap" onChange={handleInputChange} />
                                 <Label htmlFor="size40x28">40x28mm téglalap</Label>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Radio id="size55x38" name="designBadgeSize" value="55x38mm téglalap" onChange={handleInputChange} />
-                                <Label htmlFor="size55x38">55x38mm téglalap</Label>
                             </div>
                         </div>
                     )}
