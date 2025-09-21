@@ -90,7 +90,19 @@ const OrderForm = (props: React.PropsWithChildren<any>) => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormState({ ...formState, [name]: value });
+
+    if (name === "productType") {
+        // Reset dependent fields when productType changes
+        setFormState({
+            ...formState,
+            [name]: value,
+            designBadgeSize: "",
+            designRibbonColor: "",
+            designFontColor: "",
+        });
+    } else {
+        setFormState({ ...formState, [name]: value });
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -169,27 +181,66 @@ const OrderForm = (props: React.PropsWithChildren<any>) => {
             <div className="space-y-4">
                 <div>
                     <Label htmlFor="designBadgeSize" value="Jelvény méret" />
-                    <TextInput id="designBadgeSize" name="designBadgeSize" type="text" value={formState.designBadgeSize} onChange={handleInputChange} />
+                    {formState.productType === 'Kitűző' && (
+                        <div className="flex flex-col gap-2">
+                            <div className="flex items-center gap-2">
+                                <Radio id="size25" name="designBadgeSize" value="25mm" onChange={handleInputChange} />
+                                <Label htmlFor="size25">25mm</Label>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Radio id="size32" name="designBadgeSize" value="32mm" onChange={handleInputChange} />
+                                <Label htmlFor="size32">32mm</Label>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Radio id="size44" name="designBadgeSize" value="44mm" onChange={handleInputChange} />
+                                <Label htmlFor="size44">44mm</Label>
+                            </div>
+                             <div className="flex items-center gap-2">
+                                <Radio id="size58" name="designBadgeSize" value="58mm" onChange={handleInputChange} />
+                                <Label htmlFor="size58">58mm</Label>
+                            </div>
+                        </div>
+                    )}
+                    {formState.productType === 'Szalagos kitűző' && (
+                        <div className="flex flex-col gap-2">
+                            <div className="flex items-center gap-2">
+                                <Radio id="size25s" name="designBadgeSize" value="25mm" onChange={handleInputChange} />
+                                <Label htmlFor="size25s">25mm</Label>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Radio id="size32s" name="designBadgeSize" value="32mm" onChange={handleInputChange} />
+                                <Label htmlFor="size32s">32mm</Label>
+                            </div>
+                        </div>
+                    )}
+                     {formState.productType === 'Szalag kitűző nélkül' && (
+                        <p className="text-sm text-gray-500">Nincs jelvény</p>
+                    )}
                 </div>
-                <div>
-                    <Label htmlFor="designRibbonColor" value="Szalag szín" />
-                    <TextInput id="designRibbonColor" name="designRibbonColor" type="text" value={formState.designRibbonColor} onChange={handleInputChange} />
-                </div>
-                <div>
-                    <Label htmlFor="designFontColor" value="Betűszín" />
-                    <TextInput id="designFontColor" name="designFontColor" type="text" value={formState.designFontColor} onChange={handleInputChange} />
-                </div>
-                <div>
-                    <Label value="Szalagvég" />
-                    <div className="flex items-center gap-2">
-                        <Radio id="egyenes" name="designRibbonEnd" value="egyenes" defaultChecked onChange={handleInputChange} />
-                        <Label htmlFor="egyenes">Egyenes vágással (550 Ft + Áfa)</Label>
+                
+                {(formState.productType === 'Szalagos kitűző' || formState.productType === 'Szalag kitűző nélkül') && (
+                <>
+                    <div>
+                        <Label htmlFor="designRibbonColor" value="Szalag szín" />
+                        <TextInput id="designRibbonColor" name="designRibbonColor" type="text" value={formState.designRibbonColor} onChange={handleInputChange} />
                     </div>
-                    <div className="flex items-center gap-2">
-                        <Radio id="cikk-cakk" name="designRibbonEnd" value="cikk-cakk" onChange={handleInputChange} />
-                        <Label htmlFor="cikk-cakk">Cikk-cakk vágással (590 Ft + Áfa)</Label>
+                    <div>
+                        <Label htmlFor="designFontColor" value="Betűszín" />
+                        <TextInput id="designFontColor" name="designFontColor" type="text" value={formState.designFontColor} onChange={handleInputChange} />
                     </div>
-                </div>
+                    <div>
+                        <Label value="Szalagvég" />
+                        <div className="flex items-center gap-2">
+                            <Radio id="egyenes" name="designRibbonEnd" value="egyenes" defaultChecked onChange={handleInputChange} />
+                            <Label htmlFor="egyenes">Egyenes vágással (550 Ft + Áfa)</Label>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Radio id="cikk-cakk" name="designRibbonEnd" value="cikk-cakk" onChange={handleInputChange} />
+                            <Label htmlFor="cikk-cakk">Cikk-cakk vágással (590 Ft + Áfa)</Label>
+                        </div>
+                    </div>
+                </>
+                )}
             </div>
         </fieldset>
 
