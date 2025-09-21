@@ -184,32 +184,40 @@ const OrderForm = (props: React.PropsWithChildren<any>) => {
                     {formState.productType === 'Kitűző' && (
                         <div className="flex flex-col gap-2">
                             <div className="flex items-center gap-2">
-                                <Radio id="size25" name="designBadgeSize" value="25mm" onChange={handleInputChange} />
-                                <Label htmlFor="size25">25mm</Label>
+                                <Radio id="size26" name="designBadgeSize" value="26mm" onChange={handleInputChange} />
+                                <Label htmlFor="size26">26mm</Label>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Radio id="size32" name="designBadgeSize" value="32mm" onChange={handleInputChange} />
                                 <Label htmlFor="size32">32mm</Label>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Radio id="size44" name="designBadgeSize" value="44mm" onChange={handleInputChange} />
-                                <Label htmlFor="size44">44mm</Label>
+                                <Radio id="size40" name="designBadgeSize" value="40mm" onChange={handleInputChange} />
+                                <Label htmlFor="size40">40mm</Label>
                             </div>
                              <div className="flex items-center gap-2">
-                                <Radio id="size58" name="designBadgeSize" value="58mm" onChange={handleInputChange} />
-                                <Label htmlFor="size58">58mm</Label>
+                                <Radio id="size55" name="designBadgeSize" value="55mm" onChange={handleInputChange} />
+                                <Label htmlFor="size55">55mm</Label>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Radio id="size35sq" name="designBadgeSize" value="35x35mm négyzet" onChange={handleInputChange} />
+                                <Label htmlFor="size35sq">35x35mm négyzet</Label>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Radio id="size40x28" name="designBadgeSize" value="40x28mm téglalap" onChange={handleInputChange} />
+                                <Label htmlFor="size40x28">40x28mm téglalap</Label>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Radio id="size55x38" name="designBadgeSize" value="55x38mm téglalap" onChange={handleInputChange} />
+                                <Label htmlFor="size55x38">55x38mm téglalap</Label>
                             </div>
                         </div>
                     )}
                     {formState.productType === 'Szalagos kitűző' && (
                         <div className="flex flex-col gap-2">
                             <div className="flex items-center gap-2">
-                                <Radio id="size25s" name="designBadgeSize" value="25mm" onChange={handleInputChange} />
-                                <Label htmlFor="size25s">25mm</Label>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Radio id="size32s" name="designBadgeSize" value="32mm" onChange={handleInputChange} />
-                                <Label htmlFor="size32s">32mm</Label>
+                                <Radio id="size40s" name="designBadgeSize" value="40mm" onChange={handleInputChange} />
+                                <Label htmlFor="size40s">40mm</Label>
                             </div>
                         </div>
                     )}
@@ -232,11 +240,11 @@ const OrderForm = (props: React.PropsWithChildren<any>) => {
                         <Label value="Szalagvég" />
                         <div className="flex items-center gap-2">
                             <Radio id="egyenes" name="designRibbonEnd" value="egyenes" defaultChecked onChange={handleInputChange} />
-                            <Label htmlFor="egyenes">Egyenes vágással (550 Ft + Áfa)</Label>
+                            <Label htmlFor="egyenes">Egyenes vágással</Label>
                         </div>
                         <div className="flex items-center gap-2">
                             <Radio id="cikk-cakk" name="designRibbonEnd" value="cikk-cakk" onChange={handleInputChange} />
-                            <Label htmlFor="cikk-cakk">Cikk-cakk vágással (590 Ft + Áfa)</Label>
+                            <Label htmlFor="cikk-cakk">Cikk-cakk vágással</Label>
                         </div>
                     </div>
                 </>
@@ -245,8 +253,8 @@ const OrderForm = (props: React.PropsWithChildren<any>) => {
         </fieldset>
 
         <div>
-            <Label htmlFor="description" value="Leírás, amennyiben nem áll rendelkezésre fotó vagy grafika" />
-            <Textarea id="description" name="description" placeholder="Jelvényen a pontos felirat, kép megnevezése; a szalagon a pontos felirat, mindkét szalag részre külön-külön" rows={4} value={formState.description} onChange={handleInputChange} />
+            <Label htmlFor="description" value="Pontos leírás" />
+            <Textarea id="description" name="description" placeholder="Jelvényen a pontos felirat, kép megnevezése; ha van szalag, akkor a szalagon a pontos felirat, mindkét szalag részre külön-külön" rows={4} value={formState.description} onChange={handleInputChange} required />
         </div>
 
         <div>
@@ -309,7 +317,7 @@ const OrderForm = (props: React.PropsWithChildren<any>) => {
         </div>
 
         <div>
-            <Label htmlFor="promDate" value="A szalagavató időpontja" />
+            <Label htmlFor="promDate" value="Rendezvény időpontja" />
             <TextInput id="promDate" name="promDate" type="date" value={formState.promDate} onChange={handleInputChange} />
         </div>
 
