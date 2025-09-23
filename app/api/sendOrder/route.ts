@@ -44,42 +44,54 @@ export async function POST(request: Request) {
     }
 
     const messageBody = `
-      <p><strong>Típus:</strong> ${orderType}</p>
-      <p><strong>Megrendelő intézmény neve:</strong> ${institutionName}</p>
-      <h3>Kapcsolattartó személy</h3>
-      <p><strong>Név:</strong> ${contactName}</p>
-      <p><strong>Titulus:</strong> ${contactTitle}</p>
-      <p><strong>Telefonszám:</strong> ${contactPhone}</p>
-      <p><strong>Email cím:</strong> ${contactEmail}</p>
-      <h3>Termék</h3>
-      <p><strong>Megnevezés:</strong> ${productType}</p>
-      <p><strong>Darabszám:</strong> ${quantity}</p>
-      <h3>Design</h3>
-      <p><strong>Jelvény méret:</strong> ${designBadgeSize}</p>
-      <p><strong>Szalag szín:</strong> ${designRibbonColor}</p>
-      <p><strong>Betűszín:</strong> ${designFontColor}</p>
-      <p><strong>Szalagvég:</strong> ${designRibbonEnd}</p>
-      <p><strong>Leírás:</strong> ${description}</p>
-      <h3>Átvétel és fizetés</h3>
-      <p><strong>Módja:</strong> ${deliveryAndPayment}</p>
-      <h3>Számlázási adatok</h3>
-      <p><strong>Név:</strong> ${billingInfoName}</p>
-      <p><strong>Cím:</strong> ${billingInfoAddress}</p>
-      <p><strong>Email:</strong> ${billingInfoEmail}</p>
-      <h3>Szállítási adatok</h3>
-      <p><strong>Cím:</strong> ${shippingInfoAddress}</p>
-      <p><strong>Irányítószám:</strong> ${shippingInfoZip}</p>
-      <p><strong>Telefonszám:</strong> ${shippingInfoContactPhone}</p>
-      <h3>Egyéb</h3>
-      <p><strong>Kérés, megjegyzés:</strong> ${otherRequest}</p>
-      <p><strong>Szalagavató időpontja:</strong> ${promDate}</p>
-      <p><strong>Megrendelés dátuma:</strong> ${orderDate}</p>
-      ${attachmentUrls.length > 0 ? `
-      <p><strong>Csatolt fájlok:</strong></p>
-      <ul>
-        ${attachmentUrls.map(url => `<li><a href="${url}">${url}</a></li>`).join('')}
-      </ul>
-      ` : ''}
+      <div style="font-family: sans-serif; line-height: 1.6;">
+        <p><strong>Típus:</strong> ${orderType}<br>
+        <strong>Megrendelő intézmény neve:</strong> ${institutionName}</p>
+        
+        <h3>Kapcsolattartó személy</h3>
+        <p><strong>Név:</strong> ${contactName}<br>
+        <strong>Titulus:</strong> ${contactTitle}<br>
+        <strong>Telefonszám:</strong> ${contactPhone}<br>
+        <strong>Email cím:</strong> ${contactEmail}</p>
+        
+        <h3>Termék</h3>
+        <p><strong>Megnevezés:</strong> ${productType}<br>
+        <strong>Darabszám:</strong> ${quantity}</p>
+        
+        <h3>Design</h3>
+        <p><strong>Jelvény méret:</strong> ${designBadgeSize}<br>
+        ${(productType === 'Szalagos kitűző' || productType === 'Szalag kitűző nélkül') ?
+        `<strong>Szalag szín:</strong> ${designRibbonColor}<br>
+         <strong>Betűszín:</strong> ${designFontColor}<br>
+         <strong>Szalagvég:</strong> ${designRibbonEnd}<br>` : ''
+        }
+        <strong>Leírás:</strong> ${description}</p>
+        
+        <h3>Átvétel és fizetés</h3>
+        <p><strong>Módja:</strong> ${deliveryAndPayment}</p>
+        
+        <h3>Számlázási adatok</h3>
+        <p><strong>Név:</strong> ${billingInfoName}<br>
+        <strong>Cím:</strong> ${billingInfoAddress}<br>
+        <strong>Email:</strong> ${billingInfoEmail}</p>
+        
+        <h3>Szállítási adatok</h3>
+        <p><strong>Cím:</strong> ${shippingInfoAddress}<br>
+        <strong>Irányítószám:</strong> ${shippingInfoZip}<br>
+        <strong>Telefonszám:</strong> ${shippingInfoContactPhone}</p>
+        
+        <h3>Egyéb</h3>
+        <p><strong>Kérés, megjegyzés:</strong> ${otherRequest}<br>
+        <strong>Rendezvény időpontja:</strong> ${promDate}<br>
+        <strong>Megrendelés dátuma:</strong> ${orderDate}</p>
+        
+        ${attachmentUrls.length > 0 ? `
+        <h3>Csatolt fájlok:</h3>
+        <ul>
+          ${attachmentUrls.map(url => `<li><a href="${url}">${url}</a></li>`).join('')}
+        </ul>
+        ` : ''}
+      </div>
     `;
 
     const msg: MailDataRequired = {
