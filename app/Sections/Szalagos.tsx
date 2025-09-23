@@ -70,7 +70,7 @@ const Szalagos = () => {
                       <div className="relative h-[45rem] w-full">
                         <Image
                           className="rounded-lg"
-                          src={`/media/jelvenyrendeles/products/szalagos_promo (6).jpg`}
+                          src={`/media/jelvenyrendeles/products/szalagos_promo (54).jpg`}
                           alt=""
                           fill
                           sizes="100%"
